@@ -1,0 +1,19 @@
+{
+  "name": "hungryfeast-landing",
+  "private": true,
+  "type": "module",
+  "homepage": "https://viktordev96.github.io/hungryfeast-landing/",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/viktordev96/hungryfeast-landing.git"
+  },
+  "scripts": {
+    "optimize:images": "node tools/optimize-images.mjs",
+    "optimize:logo": "node tools/optimize-logo.mjs",
+    "optimize:all": "npm run optimize:images && npm run optimize:logo"
+  },
+  "devDependencies": {
+    "sharp": "^0.34.3"
+  }
+}
+

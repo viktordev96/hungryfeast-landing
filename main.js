@@ -201,3 +201,28 @@ langToggle?.addEventListener("click", () => {
   const next = current === "en" ? "es" : "en";
   setLanguage(next);
 });
+
+const shouldLoadHeroSecondary = () => {
+  const nav = navigator;
+  const conn = nav.connection || nav.mozConnection || nav.webkitConnection;
+  if (!conn) return true;
+  if (conn.saveData) return false;
+  const type = conn.effectiveType || "";
+  return !/(^|-)2g$/.test(type);
+};
+
+const loadHeroSecondary = () => {
+  const el = document.querySelector(".hero-slide.slide-two");
+  if (!el) return;
+  if (el.style.backgroundImage) return;
+  el.style.backgroundImage =
+    'image-set(url("assets/optimized/slider2-800.avif") type("image/avif") 1x, url("assets/optimized/slider2-1200.avif") type("image/avif") 2x, url("assets/optimized/slider2-800.webp") type("image/webp") 1x, url("assets/optimized/slider2-1200.webp") type("image/webp") 2x, url("assets/slider2.jpg") type("image/jpeg") 1x)';
+};
+
+if (shouldLoadHeroSecondary()) {
+  if ("requestIdleCallback" in window) {
+    window.requestIdleCallback(loadHeroSecondary, { timeout: 2500 });
+  } else {
+    window.setTimeout(loadHeroSecondary, 1200);
+  }
+}

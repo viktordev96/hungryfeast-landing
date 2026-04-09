@@ -9,3 +9,22 @@ Thumbs.db
 # Logs
 *.log
 
+# Node
+node_modules/
+npm-debug.log*
+
+# Env / local config
+.env
+.env.*
+
+# Tooling caches
+.parcel-cache/
+.sass-cache/
+.eslintcache
+.stylelintcache
+
+# Package managers
+.pnpm-store/
+.yarn/
+
+

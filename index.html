@@ -17,9 +17,14 @@
       content="International flavors, live cooking, and an experience that turns visitors into regulars."
     />
     <meta property="og:type" content="website" />
-    <meta property="og:image" content="assets/logo.png" />
+    <meta property="og:image" content="https://viktordev96.github.io/hungryfeast-landing/assets/logo.png" />
     <meta property="og:url" content="https://viktordev96.github.io/hungryfeast-landing/" />
     <meta name="twitter:card" content="summary_large_image" />
+
+    <link rel="icon" type="image/png" sizes="32x32" href="icons/favicon-32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="icons/favicon-16.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="icons/apple-touch-icon.png" />
+    <link rel="manifest" href="site.webmanifest" />
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -27,6 +32,9 @@
       href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:wght@400;600;700&family=Manrope:wght@300;400;500;600&display=swap"
       rel="stylesheet"
     />
+    <link rel="preload" as="image" href="assets/optimized/slider1-1200.avif" type="image/avif" fetchpriority="high" />
+    <link rel="preload" as="image" href="assets/optimized/slider1-1200.webp" type="image/webp" fetchpriority="high" />
+    <link rel="preload" as="image" href="assets/slider1.jpg" fetchpriority="high" />
     <link rel="stylesheet" href="styles.css" />
 
     <script type="application/ld+json">
@@ -46,7 +54,7 @@
           "addressCountry": "US"
         },
         "telephone": "+1 727-605-3900",
-        "url": "https://example.com/"
+        "url": "https://viktordev96.github.io/hungryfeast-landing/"
       }
     </script>
   </head>
@@ -54,7 +62,32 @@
     <header class="site-header" id="top">
       <div class="container header-inner">
         <a class="brand" href="#top">
-          <img class="brand-logo" src="assets/logo.png" alt="Hungry Feast logo" />
+          <picture>
+            <source
+              type="image/avif"
+              srcset="
+                assets/optimized/logo-160.avif 160w,
+                assets/optimized/logo-240.avif 240w,
+                assets/optimized/logo-400.avif 400w
+              "
+            />
+            <source
+              type="image/webp"
+              srcset="
+                assets/optimized/logo-160.webp 160w,
+                assets/optimized/logo-240.webp 240w,
+                assets/optimized/logo-400.webp 400w
+              "
+            />
+            <img
+              class="brand-logo"
+              src="assets/logo.png"
+              alt="Hungry Feast logo"
+              width="400"
+              height="466"
+              decoding="async"
+            />
+          </picture>
           <span class="brand-text">Hungry Feast</span>
         </a>
         <nav class="nav">
@@ -103,7 +136,30 @@
             </div>
           </div>
           <div class="hero-logo">
-            <img src="assets/logo.png" alt="Hungry Feast logo" />
+            <picture>
+              <source
+                type="image/avif"
+                srcset="
+                  assets/optimized/logo-240.avif 240w,
+                  assets/optimized/logo-400.avif 400w
+                "
+              />
+              <source
+                type="image/webp"
+                srcset="
+                  assets/optimized/logo-240.webp 240w,
+                  assets/optimized/logo-400.webp 400w
+                "
+              />
+              <img
+                src="assets/logo.png"
+                alt="Hungry Feast logo"
+                width="400"
+                height="466"
+                decoding="async"
+                fetchpriority="high"
+              />
+            </picture>
           </div>
         </div>
       </section>
@@ -122,7 +178,34 @@
             </ul>
           </div>
           <div class="media reveal">
-            <img src="assets/slider2.jpg" alt="Selección de platos frescos." loading="lazy" />
+            <picture>
+              <source
+                type="image/avif"
+                srcset="
+                  assets/optimized/slider2-800.avif 800w,
+                  assets/optimized/slider2-1200.avif 1200w,
+                  assets/optimized/slider2-1600.avif 1600w
+                "
+                sizes="(max-width: 900px) 100vw, 50vw"
+              />
+              <source
+                type="image/webp"
+                srcset="
+                  assets/optimized/slider2-800.webp 800w,
+                  assets/optimized/slider2-1200.webp 1200w,
+                  assets/optimized/slider2-1600.webp 1600w
+                "
+                sizes="(max-width: 900px) 100vw, 50vw"
+              />
+              <img
+                src="assets/slider2.jpg"
+                alt="Selección de platos frescos."
+                loading="lazy"
+                decoding="async"
+                width="1600"
+                height="800"
+              />
+            </picture>
           </div>
         </div>
       </section>
@@ -171,21 +254,90 @@
 
       <section class="section gallery" id="gallery" aria-label="Gallery">
         <div class="gallery-track">
-          <img
-            src="assets/slider1.jpg"
-            alt="Selección de platos calientes."
-            loading="lazy"
-          />
-          <img
-            src="assets/slider2.jpg"
-            alt="Buffet con variedad de opciones."
-            loading="lazy"
-          />
-          <img
-            src="assets/slider1.jpg"
-            alt="Estación principal del buffet."
-            loading="lazy"
-          />
+          <picture>
+            <source
+              type="image/avif"
+              srcset="
+                assets/optimized/slider1-800.avif 800w,
+                assets/optimized/slider1-1200.avif 1200w,
+                assets/optimized/slider1-1600.avif 1600w
+              "
+              sizes="(max-width: 720px) 100vw, 33vw"
+            />
+            <source
+              type="image/webp"
+              srcset="
+                assets/optimized/slider1-800.webp 800w,
+                assets/optimized/slider1-1200.webp 1200w,
+                assets/optimized/slider1-1600.webp 1600w
+              "
+              sizes="(max-width: 720px) 100vw, 33vw"
+            />
+            <img
+              src="assets/slider1.jpg"
+              alt="Selección de platos calientes."
+              loading="lazy"
+              decoding="async"
+              width="1600"
+              height="800"
+            />
+          </picture>
+          <picture>
+            <source
+              type="image/avif"
+              srcset="
+                assets/optimized/slider2-800.avif 800w,
+                assets/optimized/slider2-1200.avif 1200w,
+                assets/optimized/slider2-1600.avif 1600w
+              "
+              sizes="(max-width: 720px) 100vw, 33vw"
+            />
+            <source
+              type="image/webp"
+              srcset="
+                assets/optimized/slider2-800.webp 800w,
+                assets/optimized/slider2-1200.webp 1200w,
+                assets/optimized/slider2-1600.webp 1600w
+              "
+              sizes="(max-width: 720px) 100vw, 33vw"
+            />
+            <img
+              src="assets/slider2.jpg"
+              alt="Buffet con variedad de opciones."
+              loading="lazy"
+              decoding="async"
+              width="1600"
+              height="800"
+            />
+          </picture>
+          <picture>
+            <source
+              type="image/avif"
+              srcset="
+                assets/optimized/slider1-800.avif 800w,
+                assets/optimized/slider1-1200.avif 1200w,
+                assets/optimized/slider1-1600.avif 1600w
+              "
+              sizes="(max-width: 720px) 100vw, 33vw"
+            />
+            <source
+              type="image/webp"
+              srcset="
+                assets/optimized/slider1-800.webp 800w,
+                assets/optimized/slider1-1200.webp 1200w,
+                assets/optimized/slider1-1600.webp 1600w
+              "
+              sizes="(max-width: 720px) 100vw, 33vw"
+            />
+            <img
+              src="assets/slider1.jpg"
+              alt="Estación principal del buffet."
+              loading="lazy"
+              decoding="async"
+              width="1600"
+              height="800"
+            />
+          </picture>
         </div>
       </section>
 
@@ -237,6 +389,6 @@
       <p class="footer-note" data-i18n="footer_note">© 2026 Hungry Feast. All rights reserved.</p>
     </footer>
 
-    <script src="main.js"></script>
+    <script src="main.js" defer></script>
   </body>
 </html>
