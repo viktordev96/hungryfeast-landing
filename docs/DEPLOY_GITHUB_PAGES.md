@@ -22,6 +22,11 @@ Para este repo:
   - `meta[property="og:url"]` coincide con la URL pública.
   - `meta[property="og:image"]` es accesible públicamente (ideal: URL absoluta).
   - JSON-LD incluye `url` correcto.
+- **Móvil / responsive** (rápido):
+  - Anclas (`#story`, `#pricing`, etc.) no quedan tapadas por el header fijo.
+  - Menú hamburguesa: abre/cierra, enlaces cierran el menú, `Escape` lo cierra.
+  - Galería: se puede deslizar horizontalmente en viewport estrecho.
+  - Mapa y botones no provocan scroll horizontal accidental.
 - **Cache**: si no ves cambios, prueba hard refresh o espera 1-2 minutos (Pages suele cachear).
 
 ## 3) Optimización de imágenes (si cambias assets)

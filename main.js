@@ -188,10 +188,39 @@ const observer = new IntersectionObserver(
 
 reveals.forEach((el) => observer.observe(el));
 
+const setMenuOpen = (open) => {
+  if (!nav || !navToggle) return;
+  nav.classList.toggle("open", open);
+  document.body.classList.toggle("menu-open", open);
+  navToggle.setAttribute("aria-expanded", open ? "true" : "false");
+};
+
 navToggle?.addEventListener("click", () => {
-  const isOpen = nav.classList.toggle("open");
-  navToggle.setAttribute("aria-expanded", isOpen ? "true" : "false");
+  const willOpen = !nav.classList.contains("open");
+  setMenuOpen(willOpen);
 });
+
+nav?.querySelectorAll("a").forEach((link) => {
+  link.addEventListener("click", () => setMenuOpen(false));
+});
+
+window.addEventListener(
+  "keydown",
+  (e) => {
+    if (e.key === "Escape" && nav?.classList.contains("open")) {
+      setMenuOpen(false);
+    }
+  },
+  { passive: true }
+);
+
+const closeMenuIfDesktop = () => {
+  if (window.matchMedia("(min-width: 721px)").matches) {
+    setMenuOpen(false);
+  }
+};
+
+window.addEventListener("resize", closeMenuIfDesktop, { passive: true });
 
 const initialLang = localStorage.getItem("lang") || "en";
 setLanguage(initialLang);

@@ -24,11 +24,12 @@ npx http-server . -p 5173
 
 5. Abre un PR describiendo:
    - Qué cambió y por qué
-   - Capturas (si hay cambios visuales)
+   - Capturas (si hay cambios visuales), idealmente **escritorio y móvil**
    - Checklist de deploy (si tocaste SEO/metadata)
 
 ## Estilo
 - Mantén el proyecto sin frameworks (HTML/CSS/JS).
 - Prioriza rendimiento (imágenes optimizadas, `loading="lazy"`, etc.).
+- Si cambias layout o componentes, comprueba **~900px, ~720px y un móvil real o emulador** (safe areas, menú, galería).
 - Mantén el i18n consistente: si agregas texto en UI, añade sus claves EN/ES en `main.js`.
 

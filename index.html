@@ -2,7 +2,8 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="theme-color" content="#0b0b0b" />
     <title>Hungry Feast | Buffet & Grill</title>
     <meta
       name="description"
@@ -32,8 +33,22 @@
       href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:wght@400;600;700&family=Manrope:wght@300;400;500;600&display=swap"
       rel="stylesheet"
     />
-    <link rel="preload" as="image" href="assets/optimized/slider1-1200.avif" type="image/avif" fetchpriority="high" />
-    <link rel="preload" as="image" href="assets/optimized/slider1-1200.webp" type="image/webp" fetchpriority="high" />
+    <link
+      rel="preload"
+      as="image"
+      href="assets/optimized/slider1-800.avif"
+      type="image/avif"
+      fetchpriority="high"
+      media="(max-width: 768px)"
+    />
+    <link
+      rel="preload"
+      as="image"
+      href="assets/optimized/slider1-1200.avif"
+      type="image/avif"
+      fetchpriority="high"
+      media="(min-width: 769px)"
+    />
     <link rel="preload" as="image" href="assets/slider1.jpg" fetchpriority="high" />
     <link rel="stylesheet" href="styles.css" />
 
@@ -70,6 +85,7 @@
                 assets/optimized/logo-240.avif 240w,
                 assets/optimized/logo-400.avif 400w
               "
+              sizes="40px"
             />
             <source
               type="image/webp"
@@ -78,6 +94,7 @@
                 assets/optimized/logo-240.webp 240w,
                 assets/optimized/logo-400.webp 400w
               "
+              sizes="40px"
             />
             <img
               class="brand-logo"
@@ -90,7 +107,7 @@
           </picture>
           <span class="brand-text">Hungry Feast</span>
         </a>
-        <nav class="nav">
+        <nav class="nav" id="main-nav" aria-label="Primary">
           <a href="#story" data-i18n="nav_story">Story</a>
           <a href="#pricing" data-i18n="nav_pricing">Pricing</a>
           <a href="#gallery" data-i18n="nav_gallery">Gallery</a>
@@ -99,7 +116,14 @@
         <button class="lang-toggle" type="button" data-lang="en" aria-label="Switch to Spanish">
           ES
         </button>
-        <button class="nav-toggle" aria-label="Open menu" data-i18n-aria="nav_toggle" aria-expanded="false">
+        <button
+          class="nav-toggle"
+          type="button"
+          aria-label="Open menu"
+          aria-controls="main-nav"
+          data-i18n-aria="nav_toggle"
+          aria-expanded="false"
+        >
           <span></span>
           <span></span>
         </button>
@@ -140,16 +164,20 @@
               <source
                 type="image/avif"
                 srcset="
+                  assets/optimized/logo-160.avif 160w,
                   assets/optimized/logo-240.avif 240w,
                   assets/optimized/logo-400.avif 400w
                 "
+                sizes="(max-width: 480px) 160px, (max-width: 900px) 200px, 240px"
               />
               <source
                 type="image/webp"
                 srcset="
+                  assets/optimized/logo-160.webp 160w,
                   assets/optimized/logo-240.webp 240w,
                   assets/optimized/logo-400.webp 400w
                 "
+                sizes="(max-width: 480px) 160px, (max-width: 900px) 200px, 240px"
               />
               <img
                 src="assets/logo.png"

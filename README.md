@@ -10,7 +10,14 @@ Landing page estática (HTML/CSS/JS) enfocada en **rendimiento** y **SEO** para 
 - **Bilingüe**: inglés por defecto + toggle a español
 - **SEO**: meta tags + Open Graph + JSON-LD (`Restaurant`)
 - **Imágenes optimizadas**: AVIF/WebP generadas con scripts
-- **Responsive**: diseño adaptable + hero con slider
+- **Responsive y móvil**:
+  - Tipografía fluida (`clamp`), rejillas que pasan a una columna en pantallas medianas/pequeñas
+  - **Safe areas** (`viewport-fit=cover`, `env(safe-area-inset-*)`) para notch y barras del sistema
+  - **Menú móvil** a pantalla completa, cierre con enlace / `Escape` / resize a escritorio; bloqueo de scroll con el menú abierto
+  - **Galería** en móvil: scroll horizontal con **scroll-snap**
+  - **Hero**: `100svh` / `100dvh`, preloads de imagen según ancho (`≤768px` vs escritorio)
+  - **Mapa**: contenedor con `aspect-ratio` para menos layout shift
+  - **Accesibilidad**: `aria-controls` / `aria-expanded` en el botón del menú, `:focus-visible` en controles
 
 ## Requisitos
 - **Node.js**: recomendado **>= 18** (por compatibilidad de `sharp` y scripts)
@@ -37,9 +44,9 @@ npm run optimize:all
 ```
 
 ## Estructura del proyecto
-- `index.html`: layout y contenido
-- `styles.css`: estilos y responsive
-- `main.js`: interacciones + diccionario i18n EN/ES
+- `index.html`: layout, contenido, meta (`theme-color`, viewport con `viewport-fit=cover`), preloads del hero
+- `styles.css`: estilos, breakpoints (~900px / ~720px / ~380px), comportamiento móvil del nav y la galería
+- `main.js`: scroll del header, reveal, i18n EN/ES, menú móvil (clase `menu-open` en `body`)
 - `assets/`: imágenes originales (logo + sliders)
 - `assets/optimized/`: AVIF/WebP generados
 - `icons/`: favicons / app icons generados
